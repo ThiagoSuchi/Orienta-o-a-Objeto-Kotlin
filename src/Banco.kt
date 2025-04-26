@@ -1,11 +1,11 @@
 class Banco(
-    val nome: String,
-    val agencia: List<Agencia>
+    public val nome: String,
+    val agencia: MutableList<Agencia> = mutableListOf()
 ) {
-    open fun adcionarAgencia(agencia: Agencia): void {}
+    fun adcionarAgencia(agencia: Agencia) {}
 
-    open fun removerAgencia(agencia: Agencia): void {}
+    fun removerAgencia(agencia: Agencia) {}
 
-    open  fun obterAgencia(nome: String): Agencia {}
+    fun obterAgencia(nome: String): Agencia {}
 
 }

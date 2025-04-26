@@ -1,11 +1,11 @@
 class Conta(
     val numeroConta: String,
-    var saldo: Double,
+    protected var saldo: Double,
     val cliente: Cliente
 ) {
-    open fun depositar(valor: Double): void {}
+    open fun depositar(valor: Double) {}
 
-    open fun sacar(valor: Double): void {}
+    open fun sacar(valor: Double) {}
 
     open fun obterSaldo(): Double {}
 }

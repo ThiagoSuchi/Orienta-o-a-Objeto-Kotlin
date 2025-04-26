@@ -1,10 +1,27 @@
 class Agencia(
     val nome: String,
-    val contas: List<Conta>
+    var contas: MutableList<Conta> = mutableListOf()
 ) {
-    open fun adcionarConta(conta: Conta): void {}
+    fun adcionarConta(conta: Conta) {
+        if (conta in contas) {
+            println("Está conta já existe!")
+        }
+        contas.add(conta)
+    }
 
-    open fun removerConta(conta: Conta): void {}
+    fun removerConta(conta: Conta) {
+        if (conta in contas) {
+            contas.remove(conta)
+        }
+        println("Esta conta não foi encontrada.")
+    }
 
-    open fun obterConta(numero: String): Conta {}
+    fun obterConta(numero: String): Conta {
+        for (conta in contas) {
+            if (conta.numeroConta == numero) {
+                return conta
+            }
+            println("Esta conta não foi encontrada...")
+        }
+    }
 }
